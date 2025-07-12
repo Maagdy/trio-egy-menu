@@ -17,27 +17,15 @@ const MenuItem = ({ name, description, price }: MenuItemProps) => {
   const getAvailableSizes = () => {
     const sizes = [];
 
-    if (
-      price.small !== null &&
-      price.small !== undefined &&
-      typeof price.small === "number"
-    ) {
+    if (typeof price.small === "number" && price.small > 0) {
       sizes.push({ size: "Small", price: price.small, key: "small" });
     }
 
-    if (
-      price.medium !== null &&
-      price.medium !== undefined &&
-      typeof price.medium === "number"
-    ) {
+    if (typeof price.medium === "number" && price.medium > 0) {
       sizes.push({ size: "Medium", price: price.medium, key: "medium" });
     }
 
-    if (
-      price.large !== null &&
-      price.large !== undefined &&
-      typeof price.large === "number"
-    ) {
+    if (typeof price.large === "number" && price.large > 0) {
       sizes.push({ size: "Large", price: price.large, key: "large" });
     }
 
